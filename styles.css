@@ -19,7 +19,7 @@
 img {
     padding: 10px;
     width: 25vh;
-    height: 25vh;
+    height: auto;
     
 }
 .pick {
