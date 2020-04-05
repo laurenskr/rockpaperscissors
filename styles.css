@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+.images {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+
+}
+img {
+    padding: 10px;
+    width: 272px;
+    height: 272px;
+    
+}
+.pick {
+    border: 3px solid transparent;
+}
+.pick:hover {
+    border: 3px solid navy;
+}
