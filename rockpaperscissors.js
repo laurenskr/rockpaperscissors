@@ -24,30 +24,36 @@ let score = 0;
         }
         //ronde starten en score toevoegen
         function playRound(userThrow,cpuThrow) {
-            console.log(`you play ${userThrow}`)
-            console.log(`computer plays ${cpuThrow}`)
+            const result = document.getElementById("round-result");
+            result.innerText = `You play ${userThrow}...
+            
+            Computer plays ${cpuThrow}`
             if (userThrow === "rock") {
                 switch (cpuThrow) {
                     case "rock":
-                        console.log("tie");
+                        result.innerText += "\n\n It's a tie!";
+                        setTimeout(() => {result.innerText=""}, 1500)
+                        //console.log("tie");
                         break
                     case "paper":
-                        console.log("loser!");
+                        result.innerText += "\n\n You lose!";
+                        setTimeout(() => {result.innerText=""}, 1500)
                         break
                     case "scissors":
-                        console.log("winner!!!");
+                        result.innerText += "\n\n You Win!";
                         score += 1;
+                        setTimeout(() => {result.innerText=""}, 1500)
                         break
                 };
             }
             else if (userThrow === "paper") {
                 switch (cpuThrow) {
                     case "rock" :
-                        console.log("winner!!!");
+                        result.innerText += "\n\n You Win!";
                         score += 1;
                         break
-                    case "paper" :
-                        console.log("tie");
+                    case "paper" :                        
+                        result.innerText += "\n\n It's a tie!";
                         break
                     case "scissors" :
                         console.log("loser!");
@@ -59,11 +65,11 @@ let score = 0;
                         console.log("loser!");
                         break
                     case "paper":
-                        console.log("winner!!!");
+                        result.innerText += "\n\n You Win!";
                         score += 1;
                         break
                     case "scissors" :
-                        console.log("tie");
+                        result.innerText += "\n\n It's a tie!";
                 }
             }
             else {
