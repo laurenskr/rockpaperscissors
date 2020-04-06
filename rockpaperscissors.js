@@ -33,19 +33,19 @@ let cpuScore = 0;
                 switch (cpuThrow) {
                     case "rock":
                         result.innerHTML += "\n\n It's a <h3><b>tie!</b></h3>";
-                        setTimeout(() => {result.innerText=""}, 1500)
+                        setTimeout(() => {result.innerText=""}, 2000)
                         break
                     case "paper":
                         result.innerText += "\n\n You lose!";
                         cpuScore += 1;
                         cpuScoreCounter.innerText = cpuScore;
-                        setTimeout(() => {result.innerText=""}, 1500)
+                        setTimeout(() => {result.innerText=""}, 2000)
                         break
                     case "scissors":
                         result.innerText += "\n\n You Win!";
                         userScore += 1;
                         userScoreCounter.innerText = userScore;
-                        setTimeout(() => {result.innerText=""}, 1500)
+                        setTimeout(() => {result.innerText=""}, 2000)
                         break
                 };
             }
@@ -55,16 +55,17 @@ let cpuScore = 0;
                         result.innerText += "\n\n You Win!";
                         userScore += 1;
                         userScoreCounter.innerText = userScore;
-                        setTimeout(() => {result.innerText=""}, 1500)
+                        setTimeout(() => {result.innerText=""}, 2000)
                         break
                     case "paper" :                        
                         result.innerText += "\n\n It's a tie!";
+                        setTimeout(() => {result.innerText=""}, 2000);
                         break
                     case "scissors" :
                         result.innerText += "\n\n You lose!";
                         cpuScore += 1;
                         cpuScoreCounter.innerText = cpuScore;
-                        setTimeout(() => {result.innerText=""}, 1500)
+                        setTimeout(() => {result.innerText=""}, 2000)
                 }
             }
             else if (userThrow === "scissors") {
@@ -73,16 +74,17 @@ let cpuScore = 0;
                         result.innerText += "\n\n You lose!";
                         cpuScore += 1;
                         cpuScoreCounter.innerText = cpuScore;
-                        setTimeout(() => {result.innerText=""}, 1500)
+                        setTimeout(() => {result.innerText=""}, 2000)
                         break
                     case "paper":
                         result.innerText += "\n\n You Win!";
                         userScore += 1;
                         userScoreCounter.innerText = userScore;
-                        setTimeout(() => {result.innerText=""}, 1500)
+                        setTimeout(() => {result.innerText=""}, 2000);
                         break
                     case "scissors" :
                         result.innerText += "\n\n It's a tie!";
+                        setTimeout(() => {result.innerText=""}, 2000);
                 }
             }
         }
