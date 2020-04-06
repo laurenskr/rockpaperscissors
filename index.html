@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors!</title>
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/xolonium" type="text/css"/ text="YOUCPU"> 
     <script src="rockpaperscissors.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -30,7 +31,7 @@
             <p id="instructions"></p>
             <div id="round-result"></p>
         </div>
-        <button onclick=game()>Let's play Rock, Paper, Scissors!</button>
+        <button id="start-round" onclick="game(),hideButton()">Start a round of Rock, Paper, Scissors!</button>
     </div>
 </body>
 </html>

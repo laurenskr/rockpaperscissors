@@ -34,7 +34,6 @@ let cpuScore = 0;
                     case "rock":
                         result.innerHTML += "\n\n It's a <h3><b>tie!</b></h3>";
                         setTimeout(() => {result.innerText=""}, 1500)
-                        //console.log("tie");
                         break
                     case "paper":
                         result.innerText += "\n\n You lose!";
@@ -55,22 +54,32 @@ let cpuScore = 0;
                     case "rock" :
                         result.innerText += "\n\n You Win!";
                         userScore += 1;
+                        userScoreCounter.innerText = userScore;
+                        setTimeout(() => {result.innerText=""}, 1500)
                         break
                     case "paper" :                        
                         result.innerText += "\n\n It's a tie!";
                         break
                     case "scissors" :
-                        console.log("loser!");
+                        result.innerText += "\n\n You lose!";
+                        cpuScore += 1;
+                        cpuScoreCounter.innerText = cpuScore;
+                        setTimeout(() => {result.innerText=""}, 1500)
                 }
             }
             else if (userThrow === "scissors") {
                 switch (cpuThrow) {
                     case "rock":
-                        console.log("loser!");
+                        result.innerText += "\n\n You lose!";
+                        cpuScore += 1;
+                        cpuScoreCounter.innerText = cpuScore;
+                        setTimeout(() => {result.innerText=""}, 1500)
                         break
                     case "paper":
                         result.innerText += "\n\n You Win!";
                         userScore += 1;
+                        userScoreCounter.innerText = userScore;
+                        setTimeout(() => {result.innerText=""}, 1500)
                         break
                     case "scissors" :
                         result.innerText += "\n\n It's a tie!";
@@ -80,7 +89,7 @@ let cpuScore = 0;
         //game starten voor vijf rondes
         function game() {
             const textBox = document.getElementById("instructions");
-            textBox.textContent = "Pick one of the above to get started!"
+            textBox.textContent = "Pick one of the above to play a round!"
             getUserThrow();
             /* playRound(getUserThrow(),randomThrow());
             playRound(getUserThrow(),randomThrow());
@@ -95,4 +104,8 @@ let cpuScore = 0;
             }*/
 
         };
-        
+        function hideButton() {
+            console.log("bye!")
+            const startRound = document.getElementById("start-round");
+            startRound.style("display:none")
+        }
