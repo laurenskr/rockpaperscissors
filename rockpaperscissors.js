@@ -1,6 +1,5 @@
 let userScore = 0;
 let cpuScore = 0;
-        //TODO:
         //computer kiest random r p s
         function randomThrow() {
             let num = Math.floor(Math.random() * 3);
@@ -39,12 +38,14 @@ let cpuScore = 0;
                         result.innerText += "\n\n You lose!";
                         cpuScore += 1;
                         cpuScoreCounter.innerText = cpuScore;
+                        displayWinner();
                         setTimeout(() => {result.innerText=""}, 2000)
                         break
                     case "scissors":
                         result.innerText += "\n\n You Win!";
                         userScore += 1;
                         userScoreCounter.innerText = userScore;
+                        displayWinner();
                         setTimeout(() => {result.innerText=""}, 2000)
                         break
                 };
@@ -55,6 +56,7 @@ let cpuScore = 0;
                         result.innerText += "\n\n You Win!";
                         userScore += 1;
                         userScoreCounter.innerText = userScore;
+                        displayWinner();
                         setTimeout(() => {result.innerText=""}, 2000)
                         break
                     case "paper" :                        
@@ -65,6 +67,7 @@ let cpuScore = 0;
                         result.innerText += "\n\n You lose!";
                         cpuScore += 1;
                         cpuScoreCounter.innerText = cpuScore;
+                        displayWinner();
                         setTimeout(() => {result.innerText=""}, 2000)
                 }
             }
@@ -74,12 +77,14 @@ let cpuScore = 0;
                         result.innerText += "\n\n You lose!";
                         cpuScore += 1;
                         cpuScoreCounter.innerText = cpuScore;
+                        displayWinner();
                         setTimeout(() => {result.innerText=""}, 2000)
                         break
                     case "paper":
                         result.innerText += "\n\n You Win!";
                         userScore += 1;
                         userScoreCounter.innerText = userScore;
+                        displayWinner();
                         setTimeout(() => {result.innerText=""}, 2000);
                         break
                     case "scissors" :
@@ -110,4 +115,18 @@ let cpuScore = 0;
             console.log("bye!")
             const startRound = document.getElementById("start-round");
             startRound.style.display = 'none';
+        }
+
+        function displayWinner() {
+            if (userScore > 2) {
+                document.getElementById('overlay-text').innerHTML = `<h1>You Win!</h1>
+                <br><div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/cOtvwSHKaFK3Ul1VVu" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>`
+                document.getElementById("overlay").style.display = "block";
+                document.getElementById("overlay").addEventListener("click", function(){location.reload()});  
+            }
+            else if (cpuScore > 2) {
+                document.getElementById('overlay-text').innerHTML = `<h1>You lose!</h1><br><div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/ARj2OMThsPoAw" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>`
+                document.getElementById("overlay").style.display = "block";
+                document.getElementById("overlay").addEventListener("click", function(){location.reload()}); 
+            }
         }
