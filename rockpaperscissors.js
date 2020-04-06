@@ -1,4 +1,5 @@
-let score = 0;
+let userScore = 0;
+let cpuScore = 0;
         //TODO:
         //computer kiest random r p s
         function randomThrow() {
@@ -19,11 +20,11 @@ let score = 0;
                     playRound(userThrow,randomThrow());
                 })
             });
-            //let userThrow = prompt("Rock, paper, scissors? ").toLowerCase();
-            // return userThrow;
         }
         //ronde starten en score toevoegen
         function playRound(userThrow,cpuThrow) {
+            let userScoreCounter = document.getElementById("usrScore");
+            let cpuScoreCounter = document.getElementById("cpuScore");
             const result = document.getElementById("round-result");
             result.innerText = `You play ${userThrow}...
             
@@ -31,17 +32,20 @@ let score = 0;
             if (userThrow === "rock") {
                 switch (cpuThrow) {
                     case "rock":
-                        result.innerText += "\n\n It's a tie!";
+                        result.innerHTML += "\n\n It's a <h3><b>tie!</b></h3>";
                         setTimeout(() => {result.innerText=""}, 1500)
                         //console.log("tie");
                         break
                     case "paper":
                         result.innerText += "\n\n You lose!";
+                        cpuScore += 1;
+                        cpuScoreCounter.innerText = cpuScore;
                         setTimeout(() => {result.innerText=""}, 1500)
                         break
                     case "scissors":
                         result.innerText += "\n\n You Win!";
-                        score += 1;
+                        userScore += 1;
+                        userScoreCounter.innerText = userScore;
                         setTimeout(() => {result.innerText=""}, 1500)
                         break
                 };
@@ -50,7 +54,7 @@ let score = 0;
                 switch (cpuThrow) {
                     case "rock" :
                         result.innerText += "\n\n You Win!";
-                        score += 1;
+                        userScore += 1;
                         break
                     case "paper" :                        
                         result.innerText += "\n\n It's a tie!";
@@ -66,14 +70,11 @@ let score = 0;
                         break
                     case "paper":
                         result.innerText += "\n\n You Win!";
-                        score += 1;
+                        userScore += 1;
                         break
                     case "scissors" :
                         result.innerText += "\n\n It's a tie!";
                 }
-            }
-            else {
-                alert("Incorrect pick. Shutting down now...")
             }
         }
         //game starten voor vijf rondes
