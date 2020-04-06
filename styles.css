@@ -7,6 +7,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: "XoloniumBold";
+    background: #f5f4f0;
 }
 .container {
     display: flex;
@@ -29,6 +30,7 @@ header {
     margin: 50px;
     font-family: "XoloniumBold";
     font-size: 3em;
+    align-items: center;
 }
 .images {
     width: 80%;
@@ -45,5 +47,6 @@ img {
     border: 3px solid transparent;
 }
 .pick:hover {
-    border: 3px solid navy;
+    /* border: 3px solid #cccbc8; */
+    box-shadow: 42px 10px 30px 8px rgba(204,203,200,1);
 }
