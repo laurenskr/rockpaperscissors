@@ -120,12 +120,12 @@ let cpuScore = 0;
         function displayWinner() {
             if (userScore > 2) {
                 document.getElementById('overlay-text').innerHTML = `<h1>You Win!</h1>
-                <br><div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/cOtvwSHKaFK3Ul1VVu" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>`
+                <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/cOtvwSHKaFK3Ul1VVu" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>`
                 document.getElementById("overlay").style.display = "block";
                 document.getElementById("overlay").addEventListener("click", function(){location.reload()});  
             }
             else if (cpuScore > 2) {
-                document.getElementById('overlay-text').innerHTML = `<h1>You lose!</h1><br><div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/ARj2OMThsPoAw" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>`
+                document.getElementById('overlay-text').innerHTML = `<h1>You lose!</h1><div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/ARj2OMThsPoAw" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>`
                 document.getElementById("overlay").style.display = "block";
                 document.getElementById("overlay").addEventListener("click", function(){location.reload()}); 
             }
