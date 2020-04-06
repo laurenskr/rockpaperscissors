@@ -107,5 +107,5 @@ let cpuScore = 0;
         function hideButton() {
             console.log("bye!")
             const startRound = document.getElementById("start-round");
-            startRound.style("display:none")
+            startRound.style.display = 'none';
         }
